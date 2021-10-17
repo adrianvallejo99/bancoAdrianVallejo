@@ -22,35 +22,49 @@ public class Hipoteca {
             a menos de cinco. Además, si la edad de la persona sumada a los años a devolver el préstamo supera los
             75 años, el préstamo se rechaza.
          */
+        // Clase Scanner
         Scanner teclado = new Scanner(System.in);
+
+        // Pedimos por teclado la edad y guardamos en variable entera
         System.out.println("Introduce tu edad: ");
         int edad = teclado.nextInt();
 
+        // Comparamos la edad, para que realice la estructura del if si está dentro del rango
         if (edad >= 18 && edad <= 65) {
+            // Pedimos por teclado el sueldo bruto mensual y guardamos en variable entera
             System.out.println("Introduce tu sueldo bruto mensual:");
             int sueldo = teclado.nextInt();
-            double sueldoAnualFactor = sueldo * 12;
+            // Calculamos el sueldo anual factor
+            int sueldoAnualFactor = sueldo * 12;
+            // Pedimos por teclado el prestamo y guardamos en variable double
             System.out.println("Cantidad del prestamo: ");
             double prestamo = teclado.nextDouble() * 5.85;
 
+            // Comparamos la edad, para que realice la estructura del if si está dentro del rango
             if (sueldoAnualFactor > prestamo) {
+                // Pedimos por teclado los años a pagar el prestamo y guardamos en variable int
                 System.out.println("En cuantos años quieres pagarlo? ");
                 int year = teclado.nextInt();
+
+                // Comparamos la edad, para que realice la estructura del if si está dentro del rango
                 if (year > 5 || year < 30) {
+                    // Comparamos la edad, para que realice la estructura del if si está dentro del rango
                     if ((edad + year) < 75) {
                         System.out.println("Prestamo Concedido");
-                    }else{
+                    } else {
                         System.out.println("Lo sentimos no podemos concedertelo");
                     }
-                }else{
+                } else {
                     System.out.println("Lo sentimos el tiempo para pagarlo no entra en nuestros servicios");
                 }
-            }else{
+            } else {
                 System.out.println("Lo sentimos no cobras lo suficiente como para pagar");
             }
-        }else if (edad < 18){
+            // else if para que si la edad es menor 18 salte un mensaje
+        } else if (edad < 18) {
             System.out.println("Niño a estudiar");
-        }else if (edad > 65){
+            // else if para que si la edad es menor 18 salte un mensaje
+        } else if (edad > 65) {
             System.out.println("Abuelete el prestamo a tu hijo");
         }
     }
